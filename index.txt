@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Lagom Terrace Menu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#004d45;
+    color:white;
+    font-family:'Inter', sans-serif;
+}
+
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:70px 20px 50px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.hero small{
+    color:#e6b85c;
+    letter-spacing:5px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:90px;
+    margin-top:20px;
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+}
+
+.hero p{
+    margin-top:20px;
+    color:#d5d5d5;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:22px;
+    line-height:1.7;
+}
+
+.info{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:35px;
+    flex-wrap:wrap;
+    color:#f0f0f0;
+    font-size:18px;
+}
+
+.closed{
+    color:#ff4d4d;
+}
+
+/* MAIN MENU NAV */
+
+.menu-switch{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+}
+
+.switch-btn{
+    background:#012f2a;
+    color:white;
+    border:none;
+    padding:16px 35px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.switch-btn.active{
+    background:#e6b85c;
+    color:black;
+    font-weight:600;
+}
+
+/* CATEGORY BAR */
+
+.category-scroll{
+    overflow-x:auto;
+    white-space:nowrap;
+    padding:20px;
+    scrollbar-width:thin;
+}
+
+.category-scroll::-webkit-scrollbar{
+    height:8px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb{
+    background:#999;
+    border-radius:10px;
+}
+
+.category-btn{
+    display:inline-block;
+    margin-right:12px;
+    padding:14px 24px;
+    border-radius:50px;
+    background:#013732;
+    color:#ddd;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:18px;
+}
+
+.category-btn:hover,
+.category-btn.active{
+    background:#00796b;
+    color:white;
+}
+
+/* MENU SECTION */
+
+.menu-wrapper{
+    padding:50px 20px 100px;
+}
+
+.menu-section{
+    margin-bottom:70px;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:35px;
+    color:#f3c76a;
+    font-family:'Playfair Display', serif;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.menu-card{
+    background:#013d37;
+    border-radius:22px;
+    overflow:hidden;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.menu-card:hover{
+    transform:translateY(-6px);
+}
+
+.menu-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.menu-content{
+    padding:25px;
+}
+
+.menu-content h3{
+    font-size:28px;
+    margin-bottom:20px;
+    color:#fff;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:16px;
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.item span:first-child{
+    color:#f5f5f5;
+}
+
+.price{
+    color:#f3c76a;
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <small>RESTAURANT & BAR</small>
+
+        <h1>Lagom Terrace</h1>
+
+        <p>
+            Experience the perfect balance of flavors.
+            From savory appetizers to refreshing cocktails,
+            discover our carefully curated menu.
+        </p>
+
+        <div class="info">
+            <div>🕒 Tue - Sat: 11:00 AM - 11:30 PM</div>
+            <div class="closed">✖ Closed Sun & Mon</div>
+            <div>📍 Belize</div>
+        </div>
+
+        <div class="menu-switch">
+            <button class="switch-btn active">Food</button>
+            <button class="switch-btn active">Drinks</button>
+        </div>
+
+    </section>
+
+    <!-- CATEGORY BAR -->
+
+    <div class="category-scroll">
+
+        <div class="category-btn active">Appetizers</div>
+        <div class="category-btn">Burgers</div>
+        <div class="category-btn">Quesadillas</div>
+        <div class="category-btn">Pastas</div>
+        <div class="category-btn">Chicken</div>
+        <div class="category-btn">Shrimp</div>
+        <div class="category-btn">Fish</div>
+        <div class="category-btn">Meats</div>
+        <div class="category-btn">Beers</div>
+        <div class="category-btn">Cocktails</div>
+        <div class="category-btn">Shots</div>
+
+    </div>
+
+    <!-- MENU -->
+
+    <div class="menu-wrapper">
+
+        <!-- APPETIZERS -->
+
+        <section class="menu-section">
+
+            <h2 class="section-title">Appetizers</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="menu-content">
+
+                        <h3>Starters</h3>
+
+                        <div class="item">
+                            <span>Mozzarella Sticks</span>
+                            <span class="price">$17</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Fried Dumplings</span>
+                            <span class="price">$16</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Shrimp Cocktail</span>
+                            <span class="price">$19</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Cheesy Fries</span>
+                            <span class="price">$16</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Chicken Botanas</span>
+                            <span class="price">$13-$20</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="menu-card">
+
+                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="menu-content">
+
+                        <h3>Ceviche</h3>
+
+                        <div class="item">
+                            <span>Shrimp Ceviche</span>
+                            <span class="price">$20-$35</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Octopus Ceviche</span>
+                            <span class="price">$20-$35</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Conch Ceviche</span>
+                            <span class="price">$20-$35</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Mix 2 Options</span>
+                            <span class="price">$35</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Mix 3 Options</span>
+                            <span class="price">$47</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BURGERS -->
+
+        <section class="menu-section">
+
+            <h2 class="section-title">Burgers</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="menu-content">
+
+                        <h3>Burger Selection</h3>
+
+                        <div class="item">
+                            <span>Grilled Burger</span>
+                            <span class="price">$16</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Bacon Cheese Burger</span>
+                            <span class="price">$18</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Fish Burger</span>
+                            <span class="price">$19</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Spicy Chipotle Burger</span>
+                            <span class="price">$21</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Lagom Double Pattie</span>
+                            <span class="price">$30</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DRINKS -->
+
+        <section class="menu-section">
+
+            <h2 class="section-title">Drinks & Cocktails</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="menu-content">
+
+                        <h3>Beer & Spirits</h3>
+
+                        <div class="item">
+                            <span>Belikin</span>
+                            <span class="price">$5</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Heineken</span>
+                            <span class="price">$7</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Guinness</span>
+                            <span class="price">$7</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Local Rum</span>
+                            <span class="price">$5</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Copali Rum</span>
+                            <span class="price">$10</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="menu-card">
+
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop">
+
+                    <div class="menu-content">
+
+                        <h3>Cocktails</h3>
+
+                        <div class="item">
+                            <span>Rum Punch</span>
+                            <span class="price">$10</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Panty Ripper</span>
+                            <span class="price">$10</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Electric Lemonade</span>
+                            <span class="price">$13</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Margarita</span>
+                            <span class="price">$16</span>
+                        </div>
+
+                        <div class="item">
+                            <span>Long Island Ice Tea</span>
+                            <span class="price">$17</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+</body>
+</html>
